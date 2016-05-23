@@ -32,7 +32,7 @@ public class MonteCarloPortfolioPerformanceCalculatorTest {
 
 	@Test
 	public void test_calculate_when_sampler_always_choses_rate_equivalent_to_inflationRate() {
-		 when(mockSampler.sample()).thenReturn(3.5);
+		 when(mockSampler.sample()).thenReturn(INFLATION_RATE);
 		 PortfolioResult result = testObj.calculate(PRINCIPAL_AMOUNT, YEARS, INFLATION_RATE);
 		 Assert.assertEquals(100.0, result.getMedianValue(), 0.1);
 		 Assert.assertEquals(100.0, result.getBestTenPercentValue(), 0.1);
